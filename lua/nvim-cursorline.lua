@@ -88,12 +88,12 @@ function M.setup(options)
     au("VimEnter", {
       callback = function()
         hl(0, "CursorWord", M.options.cursorword.hl)
-        matchadd()
+        pcall(matchadd)
       end,
     })
     au({ "CursorMoved", "CursorMovedI" }, {
       callback = function()
-        matchadd()
+        pcall(matchadd)
       end,
     })
   end
